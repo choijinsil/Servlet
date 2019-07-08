@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>TomcatTest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+	<!-- 서블릿 클래스 등록 -->
+	<servlet>
+		<servlet-name>my</servlet-name>
+		<servlet-class>
+			com.siri.servlet.MyServlet
+		</servlet-class>
+	</servlet>
+	<!-- 가상의 경로 설정(서블릿 클래스에 매핑될 가상의 경로)-->
+	<servlet-mapping> 
+		<servlet-name>my</servlet-name>
+		<url-pattern>/dark/my</url-pattern>
+		<!-- url - pattern 엘리먼트 내의  맨 앞의 '/'는 (컨텍스트) 루트를 의미! -->
+	</servlet-mapping>
+	
+	<!-- 서블릿 클래스 등록2 -->
+	<servlet>
+		<servlet-name>cnt</servlet-name>
+		<servlet-class>
+			com.siri.servlet.CountSevlet
+		</servlet-class>
+	</servlet>
+	<!-- 가상의 경로 설정(서블릿 클래스에 매핑될 가상의 경로)-->
+	<servlet-mapping> 
+		<servlet-name>cnt</servlet-name>
+		<url-pattern>/cnt</url-pattern>
+		<!-- url - pattern 엘리먼트 내의  맨 앞의 '/'는 (컨텍스트) 루트를 의미! -->
+	</servlet-mapping>
+	
+	<!-- 서블릿 클래스 등록2 -->
+	<servlet>
+		<servlet-name>cnt2</servlet-name>
+		<servlet-class>
+			com.siri.servlet.CountSevlet2
+		</servlet-class>
+	</servlet>
+	<!-- 가상의 경로 설정(서블릿 클래스에 매핑될 가상의 경로)-->
+	<servlet-mapping> 
+		<servlet-name>cnt2</servlet-name>
+		<url-pattern>/cnt2</url-pattern>
+		<!-- url - pattern 엘리먼트 내의  맨 앞의 '/'는 (컨텍스트) 루트를 의미! -->
+	</servlet-mapping>
+  
+</web-app>
