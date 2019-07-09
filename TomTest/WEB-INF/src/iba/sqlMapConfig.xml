@@ -27,6 +27,7 @@
   <!-- ★  앞으로 sql문 추가되는 xml파일을 등록 ★  -->
  
   <sqlMap resource="./mapper/counter.xml"/>
+  <sqlMap resource="./mapper/emp.xml"/>
   
   
 </sqlMapConfig>

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<font color="blue" size="20">안녕? 나는 JSP야</font>
-	<form action="" method="get" >
+	<form action="" method="get" > 
 	
 	
 	</form>

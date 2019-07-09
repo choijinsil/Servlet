@@ -1,0 +1,116 @@
+
+<톰켓서버 환경설정>
+--------
+자바웹서비스(Servlet/JSP)를 하기 위한 서버
+
+
+1. 시스템 JAVA_HOME 설정 확인 
+
+2. apache-tomcat 서버 설치
+    http://tomcat.apache.org
+      ---> 좌측 Download
+      ---> Tomcat8
+      ---> 64-bit Windows zip선택
+
+3. zip파일 압축풀기
+  C:\apache-tomcat-8.5.42    
+       - bin
+       - conf
+       - lib
+       - logs
+       - temp
+       - webapps
+       - work    
+      
+4. 톰켓의 홈 디렉토리 - conf - server.xml 열기
+   - 69라인
+     <Connector port="8282" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+               
+   ===> Connector태그의 port속성의 기본값
+        "8080"   --->   "8282" 변경!!
+        ===> 변경이유?
+                이전에 설치한 OracleXE(XDB)에서 이미 8080포트를 사용하기 때문에
+
+5. cmd(command명령어)창 열기
+   위치 이동 ==> cd C:\apache-tomcat-8.5.42\bin
+   명령어     ==> startup 엔터 (.bat는 생략가능)
+   
+6. 웹브라우저 열기
+  ===> 웹서버 가동 확인 
+  ===> http://아이피:포트넘버
+         ===> http://192.168.0.96:8282    :네크워크 트래픽 발생
+         ===> http://localhost:8282       :네트워크 연결과 상관없이 테스트
+         
+------------------- 이클립스에서의 설정 ---------------------------
+
+7. https://sourceforge.net/projects/tomcatplugin/files 
+   ===> net.sf.eclipse.tomcat.updatesite-2019-01-28.zip파일 다운로드
+   
+   ===> 압축풀기
+   ===> plugins폴더의 net.sf.eclipse.tomcat_9.1.4.jar 복사
+   ===> 복사한 jar파일을 내가 사용하는 이클립스
+         C:/eclipse/plugins폴더에 붙여넣기
+   ===> 이클립스 재시작         
+
+8. 이클립스상단 메뉴바에 고양이 이미지버튼(서버시작,정지,재시작) 생성확인
+
+9. 이클립스 - Window메뉴
+           - Preferences
+           - Tomcat 선택
+               - Version 8.X선택
+               - Tomcat home ==> C:\apache-tomcat-8.5.42
+    Tomcat
+      - Advanced  선택
+        --> Tomcat base ==> C:\apache-tomcat-8.5.42  
+        
+      - JVM Settins 선택
+        --> 체크박스 Don't run Tomcat in debug mode 'V'체크
+        
+     ===> 맨하단 Apply and Close 버튼 클릭
+     
+10. 새로운 프로젝트 생성!!
+  - 우측상단의 Perspective를 Java ---> Java EE로 맞춤                                    
+  - 좌측 Project Explorer에서 우측 마우스 클릭
+  - New 
+     - Project
+         - Java폴더
+             - Tomcat Project 선택 
+             - Next버튼
+             - Project name: 'TomTest'입력
+             - Finish버튼 
+     - Open Associated Perspective? 에서  'No' 또는 'X'버튼
+
+11. 생성된 프로젝트 TomTest 바로밑의 bin폴더와 src폴더 삭제
+
+12. TomTest프로젝트 바로 밑
+      ===> HTML,CSS,JavaScript,JSP파일 작성
+      
+    WEB-INF/src밑
+      ===> JAVA파일 작성(모델클래스,서블릿클래스,컨트롤러클래스)
+         
+         
+
+
+
+
+
+   
+   
+   
+   
+   
+
+
+
+
+                 
+
+
+
+
+
+
+
+

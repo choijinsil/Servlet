@@ -24,3 +24,6 @@ select * from addr
 drop table cnt;
 drop sequence cnt_seq;
 drop table addr;
+
+select emp.empno, emp.ename, emp.hiredate, emp.sal, dept.dname from emp inner join dept on emp.deptno=dept.deptno;
+select * from emp;

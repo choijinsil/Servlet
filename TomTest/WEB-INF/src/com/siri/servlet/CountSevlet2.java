@@ -20,7 +20,7 @@ public class CountSevlet2 extends HttpServlet {
 	SqlMapClient smc; // 용도? XML문서내의 sql호출
 
 	@Override
-	public void init() throws ServletException {
+	public void init() throws ServletException { // 생성자와 동
 		smc = MySqlMapClient.getSqlMapInstance();
 	}
 

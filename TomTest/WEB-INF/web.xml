@@ -51,5 +51,17 @@
 		<url-pattern>/cnt2</url-pattern>
 		<!-- url - pattern 엘리먼트 내의  맨 앞의 '/'는 (컨텍스트) 루트를 의미! -->
 	</servlet-mapping>
+	
+	<!-- 파라미터 서블릿 등록 -->
+	<servlet>
+		<servlet-name>param</servlet-name>
+		<servlet-class>com.encore.t0709.ParamServlet</servlet-class>
+	</servlet>
+	
+	<!-- 파라미터 서블릿에 대한 가상경로 등록 -->
+	<servlet-mapping>
+		<servlet-name>param</servlet-name>
+		<url-pattern>/0709/result</url-pattern>
+	</servlet-mapping>
   
 </web-app>
