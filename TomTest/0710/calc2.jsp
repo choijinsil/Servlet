@@ -9,6 +9,7 @@
 		document.getElementById("d1").innerHTML="<hr>";	
 		
 	}
+	
 </script>
 
 <meta charset="UTF-8">
@@ -18,6 +19,7 @@
 
 	<%!
 	Calculator calc;
+	String a="";
 	%>
 	
 
@@ -37,6 +39,9 @@
 	</form>
 	
 	<%
+	int suu= 3;
+	String str= "오늘은 목욜";
+		
 	if(request.getMethod().equals("POST")){
 		out.println("<hr>");
 		String su1 = request.getParameter("su1");
@@ -52,11 +57,18 @@
 		<%}else if(oper.equals("/")&&su2.equals("0")){%>
 		<p style="color: red"><strong>0으로 나눌 수 없습니다.</strong></p>	
 		<%}else{
-		calc= new Calculator(Integer.parseInt(su1),Integer.parseInt(su2),oper);%>
-		<font color="blue"><strong><%=calc.getResultStr()%></strong></font>
+		calc= new Calculator(Integer.parseInt(su1),Integer.parseInt(su2),oper);
+		
+		a+="<br>"+calc.getResultStr();
+		%>
+		<font color="blue"><strong><%=a%></strong></font>
+		<script type="text/javascript">
+		document.write('<%=str%>');
+		</script>
 		<%}
 	}
 	%>
+	
 
 </body>
 </html>

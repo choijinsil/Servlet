@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/calc")
 public class CalcServlet extends HttpServlet {
 	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+	}
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 계산기폼 출력 ==> URL주소 직접 입력시 실행
 		System.out.println("doGet");// 톰켓서버 콘솔출력
