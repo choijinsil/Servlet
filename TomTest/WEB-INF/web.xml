@@ -7,6 +7,8 @@
     <welcome-file>hello.jsp</welcome-file>
   </welcome-file-list>
 
+	
+	
 	<!-- 서블릿 클래스 등록 -->
 	<servlet>
 		<servlet-name>my</servlet-name>
@@ -67,5 +69,14 @@
 	  <!-- location은 무조건, 위 두개는 택1 -->
 	  <location>/0711/error.jsp</location>
 	</error-page>
+	
+
+	<!--  -->
+	<!--<session-config>-->
+		<!--<session-timeout></session-timeout> -->
+		<!-- Tomtest(WebContext)안의 모든 페이지에 대해서 '분' 단위의 세션유지시간을 설정해줄 수 있다. -->
+	<!--</session-config>-->
+	
+	
   
 </web-app>
