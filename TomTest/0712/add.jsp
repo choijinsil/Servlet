@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>상품추가</title>
 </head>
+
 <body>
 	<%!ArrayList<Object> arr = new ArrayList<>(); %>
 	
@@ -19,6 +20,7 @@
 			arr.add(product);
 			session.setAttribute("fruits", arr);
 			out.print("<script>alert('"+product+"(이)가 추가되었습니다!'); history.back();</script>");
+		
 		}else{
 			out.print("<script>history.back()</script>");
 		}

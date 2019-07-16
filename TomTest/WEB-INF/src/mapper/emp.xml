@@ -6,4 +6,10 @@
 		select emp.empno, emp.ename, emp.hiredate, emp.sal, dept.dname from emp inner join dept on emp.deptno=dept.deptno
 	</select>
 	
+	<select id="find" resultClass="com.encore.t0716.vo.Emp">
+		select e.empno, e.ename, d.dname, s.grade
+        from emp e, dept d, salgrade s
+        where e.deptno=d.deptno and e.sal between s.losal and s.hisal
+	</select>
+	
 </sqlMap>
