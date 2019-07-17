@@ -25,6 +25,10 @@
 	<select id="select" resultClass="user" parameterClass="String">
 		select * from userInfo where id=#id#
 	</select>
+	
+	<select id="selectById" resultClass="int" parameterClass="String">
+		select count(*) from userInfo where id=#id#
+	</select>
 
 	<select id="findAll">
 

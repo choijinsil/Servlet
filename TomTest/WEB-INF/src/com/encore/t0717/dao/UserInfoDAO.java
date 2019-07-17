@@ -47,6 +47,11 @@ public class UserInfoDAO {
 		return (UserInfo) sqlMap.queryForObject("userInfo.select", id);
 
 	}
+	
+	public int selectById(String id) throws SQLException {
+		return (int) sqlMap.queryForObject("userInfo.selectById", id);
+	}
+	
 
 	public List<UserInfo> findAll() {
 		return null;

@@ -28,7 +28,8 @@
 		
 	}
 	function ck(){
-		var win = window.open("confirmid.jsp", "아이디 중복확인", "width=500,height=500");
+		var id=document.frm.id.value;
+		var win = window.open("confirmid.jsp?id="+id, "아이디 중복확인", "width=500,height=500");
 
 	}
 		
