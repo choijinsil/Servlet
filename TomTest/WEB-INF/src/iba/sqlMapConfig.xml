@@ -28,6 +28,7 @@
  
   <sqlMap resource="./mapper/counter.xml"/>
   <sqlMap resource="./mapper/emp.xml"/>
+  <sqlMap resource="./mapper/userInfo.xml"/>
   
   
 </sqlMapConfig>
