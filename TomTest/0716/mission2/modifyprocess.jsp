@@ -14,7 +14,7 @@
 </head>
 <body>
   <center>
-  <%
+  	<%
          UserInfoDAO dao = new UserInfoDAO();
   		try{
          if(dao.modify(user)){

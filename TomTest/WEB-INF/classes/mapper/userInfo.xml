@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap namespace="userInfo">
+<typeAlias alias="user" type="com.encore.t0717.vo.UserInfo"/>
+
+	<insert id="create" parameterClass="user">
+		insert into userInfo values 
+		(#id#, #pass#, #name#, #jumin#, #birth#, #zip#, #addr#, #email#, #job#)
+	</insert>
+
+	<update id="modify" parameterClass="user" >
+		update userinfo 
+		set pass=#pass#, zip=#zip#, addr=#addr#, job=#job#, email=#email#
+		where id=id
+	</update>
+
+	<delete id="remove" parameterClass="String">
+		delete from userinfo where id=#id#
+	</delete>
+
+	<select id="selectLogin" parameterClass="String" resultClass="String">
+		select pass from userInfo where id=#id#
+	</select>
+	
+	<select id="select" resultClass="user" parameterClass="String">
+		select * from userInfo where id=#id#
+	</select>
+	
+	<select id="selectById" resultClass="int" parameterClass="String">
+		select count(*) from userInfo where id=#id#
+	</select>
+
+	<select id="findAll">
+
+	</select>
+
+</sqlMap>

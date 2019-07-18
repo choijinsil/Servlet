@@ -18,7 +18,8 @@
  	if(login!=null && login.equals("success")){  %>		    
      <center>
      <p>    
-	    <img src="/TomTest/image/s.jpg" width="400" height="300">
+	   <!--<img src="<%=application.getInitParameter("imagePath") %>/s.jpg" width="400" height="300"> -->
+	    <img src="${initParam.imagePath }/s.jpg" width="400" height="300">
      </p>
      <p class="normalbold">이 페이지는 사용자 인증을 받아야 볼 수 있죠!</p>    
      <p class="normal">감사합니다....</p>

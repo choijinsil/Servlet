@@ -7,7 +7,47 @@
     <welcome-file>hello.jsp</welcome-file>
   </welcome-file-list>
 
+
+	<!-- 리스너 등록 -->
+	<listener>
+		<listener-class>com.encore.t0718.MyListener</listener-class>
+	</listener>
 	
+	<!-- 전체 서블릿과 JSP에서 공유할 데이터(text) 정의 -->
+	<context-param>
+		<param-name>common</param-name>
+		<param-value>복 많이 받으세요^^*</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>rootPath</param-name>
+		<param-value>/TomTest</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>imagePath</param-name>
+		<param-value>/TomTest/image</param-value>
+	</context-param>
+	
+	
+	<!-- 필터 클래스 등록 -->
+	<filter>
+	<filter-name>enc</filter-name>
+	<filter-class>util.enc.EncFilter</filter-class>
+	
+	<!-- 초기화시 전달할 데이터 -->
+	<init-param>
+		<description>encoding초기값</description>
+		<param-name>encType</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+	</filter>
+	
+	<!-- 앞으로 JSP가 들어오면 필터를 거치겠다. -->
+	<filter-mapping>
+		<filter-name>enc</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
 	
 	<!-- 서블릿 클래스 등록 -->
 	<servlet>
@@ -15,7 +55,12 @@
 		<servlet-class>
 			com.siri.servlet.MyServlet
 		</servlet-class>
+		<init-param>
+			<param-name>youName</param-name>
+			<param-value>siri</param-value>
+		</init-param>
 	</servlet>
+	
 	<!-- 가상의 경로 설정(서블릿 클래스에 매핑될 가상의 경로)-->
 	<servlet-mapping> 
 		<servlet-name>my</servlet-name>
@@ -69,7 +114,6 @@
 	  <!-- location은 무조건, 위 두개는 택1 -->
 	  <location>/0711/error.jsp</location>
 	</error-page>
-	
 
 	<!--  -->
 	<!--<session-config>-->

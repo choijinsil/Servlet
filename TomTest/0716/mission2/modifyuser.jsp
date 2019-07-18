@@ -42,7 +42,7 @@
       <tr>
          <td width="100" bgcolor="#ffcccc" >사용자ID</td>
          <td colspan="3"> 
-         <input type="text" name="id" value="${getId }" disabled>
+         <input type="text" name="userid" value="${getId }" readonly>
           <input type="hidden" name="id" value="${getId }">
          </td>
       </tr>
