@@ -19,7 +19,8 @@ public class UserInfoDAO {
 
 	public boolean create(UserInfo user) {
 		try {
-			sqlMap.insert("userInfo.create", user);
+			Object ob=sqlMap.insert("userInfo.create", user);
+			System.out.println("ob>>"+ob);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();

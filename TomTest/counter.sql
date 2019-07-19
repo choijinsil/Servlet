@@ -27,3 +27,19 @@ drop table addr;
 
 select emp.empno, emp.ename, emp.hiredate, emp.sal, dept.dname from emp inner join dept on emp.deptno=dept.deptno;
 select * from emp;
+
+
+create sequence guest_seq;
+create table guest(
+	
+	writer varchar2(10)
+	, email varchar2(20)
+	, tel
+	, pass
+	, contents
+	, wdate
+);
+
+
+
+

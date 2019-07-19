@@ -16,6 +16,5 @@
 		파일:	 <input type="file" name="myfile"><br>
 		<button>전송</button><br>
 	</form>
-
 </body>
 </html>
