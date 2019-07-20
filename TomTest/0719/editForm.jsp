@@ -17,7 +17,7 @@
 	<hr>
 	<a href="control?action=list">게시물 목록으로</a>
 	<br><br>
-	<form action="control?action=update" method="post">
+	<form action="control?action=update&no=${param.no }" method="post">
 		<table border="1">
 			<tr>
 				<th bgcolor="#F5A9F2">작성자</th>

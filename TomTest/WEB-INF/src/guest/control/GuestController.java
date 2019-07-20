@@ -86,10 +86,8 @@ public class GuestController extends HttpServlet {
 			String pass = req.getParameter("pass");
 			String contents = req.getParameter("contents");
 			
-			Guest noVo= (Guest) req.getAttribute("vo");
 			Guest vo = new Guest();
-			
-			vo.setNo(noVo.getNo());
+			vo.setNo(Integer.parseInt(no));
 			vo.setWriter(username);
 			vo.setEmail(email);
 			vo.setTel(tel);

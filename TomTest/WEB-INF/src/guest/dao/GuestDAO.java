@@ -61,7 +61,15 @@ public class GuestDAO {
 		return false;
 	}
 
+	// delete 기능 ㅅ정중
 	public boolean delete(int no) {
+		try {
+			if (smc.delete("guestinfo.delete", no) == 1) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 
 	}

@@ -23,8 +23,11 @@
 		writer=#writer#, email=#email#, tel=#tel#
 		,pass=#pass#, contents=#contents# 
 		where no=#no#
-		
-		
 	</update>
+	
+	<delete id="delete" parameterClass="int">
+		delete from guest
+		where no=#no#
+	</delete>
 
 </sqlMap>
