@@ -5,7 +5,24 @@
 
 	<select id="selectAll" resultClass="guest">
 		select * from guest
+		 order by no desc
 	</select>
+	
+	<select id="selectTotalPage" resultClass="int">
+		 select ceil(count(*)/10) from guest 
+	</select>
+	 
+	<!-- 목록 보기에 출력할 데이터 조회 -->
+	<select id="selectPage" resultClass="guest" parameterClass="java.util.Map">
+       select no, writer, tel, wdate, contents
+      from  (select no, writer, tel, wdate, contents, rownum rn
+             from (select no, writer, tel, wdate, contents
+                   from guest
+                   order by no desc
+                  )
+             )
+       where rn between #start# and #end#
+   </select>
 
 	<select id="selectById" parameterClass="int" resultClass="guest">
 		select
@@ -29,5 +46,6 @@
 		delete from guest
 		where no=#no#
 	</delete>
+	
 
 </sqlMap>

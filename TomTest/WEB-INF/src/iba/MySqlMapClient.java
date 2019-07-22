@@ -8,14 +8,10 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 public class MySqlMapClient {
-   /*
-       sqlMapConfig.xml¹®¼­(ÅØ½ºÆ®¹®¼­)¸¦  °´Ã¼È­ ½ÃÄÑÁÖ´Â Å¬·¡½º
-       
-                ¡ÚSqlMapClientÅ¬·¡½º  : XML³»¿¡ ÀÛ¼ºµÈ sql¹®À» È£Ãâ!!
-    */
+ 
 	
 	private static final SqlMapClient sqlMap;
-	
+	 
     static {
        	
        try {
@@ -24,8 +20,8 @@ public class MySqlMapClient {
 		   sqlMap = SqlMapClientBuilder.buildSqlMapClient(reader);
 	    } catch (IOException e) {
 		  e.printStackTrace();
-		  throw new RuntimeException("MySqlMapConfigÃÊ±âÈ­ Áß ¿¡·¯: "+ e);
-	   }
+		  throw new RuntimeException("MySqlMapConfigì´ˆê¸°í™” ì—ëŸ¬: "+ e);
+	   } 
     }//static
     
     public static SqlMapClient getSqlMapInstance() {

@@ -36,6 +36,27 @@
 			</c:forEach>
 		</table>
 	</form>
+	<br>
+	
+	<c:if test="${page==1 }">
+		이전
+	</c:if>
+	
+	<c:if test="${page>1 }">
+		<a href="control?action=list&page=${page-1 }">이전</a>
+	</c:if>
+	
+	<c:forEach begin="1" end="${totalPage }"  var="i">
+         [<a href="control?action=list&page=${i }">${i }</a>]
+      </c:forEach>
+      
+	<c:choose>
+		<c:when test="${totalPage > page }">
+			<a href="control?action=list&page=${page+1 }">다음</a>
+		</c:when>
+		<c:otherwise>다음</c:otherwise>
+	</c:choose>
+	
 
 </body>
 </html>

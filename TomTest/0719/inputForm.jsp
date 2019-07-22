@@ -15,7 +15,7 @@
 		<table border="1">
 			<tr>
 				<th bgcolor="#F5A9F2">작성자</th>
-				<td>
+				<td>	
 					<input type="text" name="username">
 				</td>	
 			</tr>

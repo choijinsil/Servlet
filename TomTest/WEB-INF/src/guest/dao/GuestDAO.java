@@ -2,6 +2,7 @@ package guest.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -28,47 +29,44 @@ public class GuestDAO {
 		return false;
 	}
 
-	public List<Guest> selectAll() throws SQLException {
+	public List<Guest> selectAll(int page) throws SQLException {
 		// List는 행의 갯수
-		List<Guest> list = smc.queryForList("guestinfo.selectAll");
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getWriter());
-		}
+		// List<Guest> list = smc.queryForList("guestinfo.selectAll");
+		// skip- 조회행중 건너뛰기할 행의 수, max: 조회할 최대 행 수
+		List<Guest> list = smc.queryForList("guestinfo.selectAll", page * 10 - 10, 10);
 		return list;
-
 	}
 
-	public Guest selectById(int no) {
+	public Integer selectTotalPage() throws SQLException {
+		return (Integer) smc.queryForObject("guestinfo.selectTotalPage");
+		
+	}
+
+//	public List<Guest> selectPage(Map<String, Integer> map) throws SQLException {
+//		// List는 행의 갯수
+//		List<Guest> list = smc.queryForList("guestinfo.selectPage", map);
+//		// map(start1, end10)
+//		return list;
+//	}
+
+	public Guest selectById(int no) throws SQLException {
 		Guest vo = new Guest();
-		try {
-			vo = (Guest) smc.queryForObject("guestinfo.selectById", no);
-			return vo;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		vo = (Guest) smc.queryForObject("guestinfo.selectById", no);
 		return vo;
 	}
 
-	public boolean update(Guest guest) {
+	public boolean update(Guest guest) throws SQLException {
 
-		try {
-			if (smc.update("guestinfo.update", guest) == 1) {
-				return true;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (smc.update("guestinfo.update", guest) == 1) {
+			return true;
 		}
 		return false;
 	}
 
-	// delete 기능 ㅅ정중
-	public boolean delete(int no) {
-		try {
-			if (smc.delete("guestinfo.delete", no) == 1) {
-				return true;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+	// delete 기능 수정중
+	public boolean delete(int no) throws SQLException {
+		if (smc.delete("guestinfo.delete", no) == 1) {
+			return true;
 		}
 		return false;
 
